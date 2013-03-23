@@ -11,11 +11,14 @@ from django_localflavor_br.br_states import STATE_CHOICES
 from django.core.validators import EMPTY_VALUES
 from django.forms import ValidationError
 from django.forms.fields import Field, RegexField, CharField, Select
-from django.utils.encoding import smart_text
 from django.utils.translation import ugettext_lazy as _
 
+try:
+    from django.utils.encoding import smart_text
+except ImportError:
+    from django.utils.encoding import smart_unicode as smart_text
 
-phone_digits_re = re.compile(r'^(\d{2})[-\.]?(\d{4})[-\.]?(\d{4})$')
+phone_digits_re = re.compile(r'^(\d{2})[-\.]?(\d{4,5})[-\.]?(\d{4})$')
 
 class BRZipCodeField(RegexField):
     default_error_messages = {
@@ -28,7 +31,8 @@ class BRZipCodeField(RegexField):
 
 class BRPhoneNumberField(Field):
     default_error_messages = {
-        'invalid': _('Phone numbers must be in XX-XXXX-XXXX format.'),
+        'invalid': _(('Phone numbers must be in either of the following '
+                         'formats: XX-XXXX-XXXX or XX-XXXXX-XXXX.')),
     }
 
     def clean(self, value):
