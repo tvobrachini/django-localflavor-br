@@ -20,7 +20,7 @@ msgstr ""
 
 #: forms.py:22
 msgid "Enter a zip code in the format XXXXX-XXX."
-msgstr "Informe um código postal no formato XXXXX-XXX."
+msgstr "CEP devem estar no formato XXXXX-XXX."
 
 #: forms.py:31
 msgid "Phone numbers must be in XX-XXXX-XXXX format."
@@ -31,8 +31,8 @@ msgid ""
 "Select a valid brazilian state. That state is not one of the available "
 "states."
 msgstr ""
-"Selecione um estado brasileiro válido. O estado escolhido não é um dos "
-"estados disponíveis."
+"Selecione um estado brasileiro válido. O estado escolhido não é um "
+"estados válido."
 
 #: forms.py:93
 msgid "Invalid CPF number."
@@ -44,7 +44,7 @@ msgstr "Este campo requer no máximo 11 dígitos ou 14 caracteres."
 
 #: forms.py:95 forms.py:134
 msgid "This field requires only numbers."
-msgstr "Este campo requer somente números."
+msgstr "Este campo deve conter somente números."
 
 #: forms.py:133
 msgid "Invalid CNPJ number."
@@ -52,4 +52,4 @@ msgstr "Número de CNPJ inválido."
 
 #: forms.py:135
 msgid "This field requires at least 14 digits"
-msgstr "Este campo requer ao menos 14 dígitos"
+msgstr "Este campo deve conter 14 dígitos"
