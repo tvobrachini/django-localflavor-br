@@ -2,6 +2,10 @@
 django_localflavor_br
 =====================
 
+.. image:: https://secure.travis-ci.org/django/django-localflavor-br.png
+   :alt: Build Status
+   :target: http://travis-ci.org/django/django-localflavor-br
+
 Country-specific Django helpers for Brazil.
 
 What's in the Brazil localflavor?
