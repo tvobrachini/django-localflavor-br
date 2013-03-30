@@ -20,6 +20,7 @@ except ImportError:
 
 phone_digits_re = re.compile(r'^(\d{2})[-\.]?(\d{4,5})[-\.]?(\d{4})$')
 
+
 class BRZipCodeField(RegexField):
     default_error_messages = {
         'invalid': _('Enter a zip code in the format XXXXX-XXX.'),
@@ -29,10 +30,11 @@ class BRZipCodeField(RegexField):
         super(BRZipCodeField, self).__init__(r'^\d{5}-\d{3}$',
             max_length, min_length, *args, **kwargs)
 
+
 class BRPhoneNumberField(Field):
     default_error_messages = {
         'invalid': _(('Phone numbers must be in either of the following '
-                         'formats: XX-XXXX-XXXX or XX-XXXXX-XXXX.')),
+                      'formats: XX-XXXX-XXXX or XX-XXXXX-XXXX.')),
     }
 
     def clean(self, value):
@@ -45,6 +47,7 @@ class BRPhoneNumberField(Field):
             return '%s-%s-%s' % (m.group(1), m.group(2), m.group(3))
         raise ValidationError(self.error_messages['invalid'])
 
+
 class BRStateSelect(Select):
     """
     A Select widget that uses a list of Brazilian states/territories
@@ -53,7 +56,9 @@ class BRStateSelect(Select):
     def __init__(self, attrs=None):
         super(BRStateSelect, self).__init__(attrs, choices=STATE_CHOICES)
 
+
 class BRStateChoiceField(Field):
+
     """
     A choice field that uses a list of Brazilian states as its choices.
     """
@@ -80,10 +85,12 @@ class BRStateChoiceField(Field):
             raise ValidationError(self.error_messages['invalid'])
         return value
 
+
 def DV_maker(v):
     if v >= 2:
         return 11 - v
     return 0
+
 
 class BRCPFField(CharField):
     """
@@ -131,6 +138,7 @@ class BRCPFField(CharField):
             raise ValidationError(self.error_messages['invalid'])
 
         return orig_value
+
 
 class BRCNPJField(Field):
     default_error_messages = {
