@@ -8,7 +8,7 @@ What's in the Brazil localflavor?
 =================================
 
 * forms.BRPhoneNumberField: A form field that validates input as a Brazilian
-  phone number, with the format XX-XXXX-XXXX.
+  phone number, with the format XX-XXXX-XXXX or XX-XXXXX-XXXX.
 
 * forms.BRZipCodeField: A form field that validates input as a Brazilian zip
   code, with the format XXXXX-XXX.
