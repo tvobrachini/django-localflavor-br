@@ -2,7 +2,7 @@ clean:
 	git clean -Xfd
 
 install:
-	pip install --quiet --requirement=requirements/tests.txt --use-mirrors
+	pip install --quiet --requirement=requirements.txt --use-mirrors
 	pip install --quiet --use-mirrors django==${DJANGO}
 	pip install --quiet --editable=.
 
